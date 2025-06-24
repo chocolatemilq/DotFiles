@@ -1,0 +1,85 @@
+@import url("./colors.css");
+* {
+    border-radius: 10;
+    font-size: 10pt;
+    min-height: 0;
+}
+window#waybar {
+    opacity: 1;
+    background-color: transparent;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background: @background;
+    color: @foreground;
+    border: 2px solid @selection;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: @background;
+}
+#workspaces button.active {
+    color: @purple;
+}
+#workspaces button.urgent {
+    color: @red;
+}
+#clock {
+    padding: 2px 20px;
+    background: @background;
+    border: 2px solid @selection;
+    color: @purple;
+}
+#memory {
+    padding: 2px 20px;
+    padding-right: 25px;
+    background: @background;
+    border: 2px solid @selection;
+}
+#battery {
+    padding: 2px 20px;
+    padding-right: 25px;
+    background: @background;
+    border: 2px solid @selection;
+}
+#battery.warning {
+    color: @yellow;
+}
+#battery.critical {
+    color: @red;
+}
+#battery.normal{
+    color: @cyan;
+}
+#battery.full {
+    color: @green;
+}
+
+#cpu {
+    padding: 2px 20px;
+    padding-right: 25px;
+    background: @background;
+    border: 2px solid @selection;
+}
+#window {
+    padding: 2px 20px;
+    background: @background;
+    border: 2px solid @selection
+}
+#power-profiles-daemon {
+    padding: 2px 20px;
+    background: @background;
+    border: 2px solid @selection
+}
+#power-profiles-daemon.power-saver {
+    color: @green
+}
+#power-profiles-daemon.balanced {
+    color: @cyan
+}
+#power-profiles-daemon.performance {
+    color: @yellow
+}
