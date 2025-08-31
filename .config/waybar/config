@@ -1,13 +1,15 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 23,
+  "height": 26,
   "spacing": 6,
   "margin-top": 1,
   "margin-bottom": 0,
   "margin-left": 5,
   "margin-right": 5,
+
   "modules-left": [
+    "custom/icon",
     "hyprland/workspaces",
     "hyprland/window"
   ],
@@ -17,27 +19,30 @@
   "modules-right": [
     "cpu",
     "memory",
+    "pulseaudio",
     "battery",
     "power-profiles-daemon"
   ],
+  "custom/icon": {
+    "format": ""
+  },
   "hyprland/workspaces": {
-    "format": " {icon}",
+    "format": "{icon}",
     "format-icons": {
-    	"1": "𝋁",
-    	"2": "𝋂",
-    	"3": "𝋃",
-    	"4": "𝋄",
-    	"5": "𝋅",
-	"6": "𝋆",
-	"7": "𝋇",
-	"8": "𝋈",
-	"9": "𝋉",
-	"10": "𝋊",
+    	"1": "1",
+    	"2": "2",
+    	"3": "3",
+    	"4": "4",
+    	"5": "5",
+	"6": "6",
+	"7": "7",
+	"8": "8",
+	"9": "9",
+	"10": "10",
     },
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1"
   },
+
   "hyprland/window": {
     "format": "{title}",
     "max-length": 30,
@@ -46,9 +51,21 @@
     },
     "tooltip": false
    },
+
   "clock": {
     "format": "{:%I:%M - %b %e}",
     "tooltip": false
+  },
+
+  "pulseaudio": {
+	"format": "{volume}% {icon}",
+	"format-bluetooth": "{volume}% {icon}",
+	"format-icons": {
+		"headphones": "",
+		"default": ""
+	},
+	"scroll-step": 1,
+	"on-click": "pavucontrol"
   },
   "battery": {
     "bat": "BAT0",
@@ -62,29 +79,32 @@
     "format": "{capacity}% {icon}",
     "format-icons": {
 	"default": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
-    	"charging": "󱐋"
+    	"charging": "󱐋",
     },
     "max-length": 25
   },
+
   "cpu": {
 	"interval": 10,
 	"format": "{}% ",
 	"max-length": 10
   },
+
   "memory": {
 	"interval": 30,
 	"format": "{}% ",
 	"max-length": 10
   },
+	
   "power-profiles-daemon": {
-  "format": "{profile} {icon}",
-  "tooltip-format": "Power profile: {profile}nDriver: {driver}",
-  "tooltip": true,
-  "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
-  }
+  	"format": "{profile} {icon}",
+  	"tooltip-format": "Power profile: {profile}nDriver: {driver}",
+ 	"tooltip": true,
+ 	"format-icons": {
+    		"default": "",
+    		"performance": "",
+    		"balanced": "",
+    		"power-saver": ""
+  	}
   },
 }
