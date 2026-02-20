@@ -1,0 +1,109 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+  "spacing": 6,
+  "margin-top": 1,
+  "margin-bottom": 0,
+  "margin-left": 5,
+  "margin-right": 5,
+
+  "modules-left": [
+    "custom/icon",
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "power-profiles-daemon"
+  ],
+  "custom/icon": {
+    "format": "󰣇"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+    	"1": "1",
+    	"2": "2",
+    	"3": "3",
+    	"4": "4",
+    	"5": "5",
+	"6": "6",
+	"7": "7",
+	"8": "8",
+	"9": "9",
+	"10": "10",
+    },
+    "on-click": "activate",
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 30,
+    "rewrite": {
+        "": "Background"
+    },
+    "tooltip": false
+   },
+
+  "clock": {
+    "format": "{:%I:%M - %e}",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+	"format": "{volume}% {icon}",
+	"format-bluetooth": "{volume}% {icon}",
+	"format-icons": {
+		"headphones": "",
+		"default": [""]
+	},
+	"scroll-step": 1,
+	"on-click": "pavucontrol"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 10,
+    "states": {
+        "warning": 30,
+        "critical": 15,
+	"normal": 95,
+	"full": 100
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+	"default": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    	"charging": "󱐋",
+    },
+    "max-length": 25
+  },
+
+  "cpu": {
+	"interval": 10,
+	"format": "{usage}% ",
+	"max-length": 10
+  },
+
+  "memory": {
+	"interval": 30,
+	"format": "{}% ",
+	"max-length": 10
+  },
+	
+  "power-profiles-daemon": {
+  	"format": "{icon}",
+  	"tooltip-format": "Power profile: {profile}nDriver: {driver}",
+ 	"tooltip": true,
+ 	"format-icons": {
+    		"default": "",
+    		"performance": "",
+    		"balanced": "",
+    		"power-saver": ""
+  	}
+  },
+}
